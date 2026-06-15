@@ -1,6 +1,6 @@
-# CircleChen Plastics Website
+# CircleVance
 
-Static company website for a US-focused plastic recycling and resin supply business.
+CircleVanceWeb is a static company website for a US-focused plastic recycling and resin supply business.
 
 ## Files
 
