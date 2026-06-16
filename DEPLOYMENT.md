@@ -21,8 +21,8 @@ Reasons:
    - Build command: leave empty
    - Output directory: `/`
 6. Add custom domains in Cloudflare Pages:
-   - `yourdomain.com`
-   - `www.yourdomain.com`
+   - `cyclevance.com`
+   - `www.cyclevance.com`
 7. Cloudflare will create or suggest the required DNS records.
 
 Nameserver changes can take time to propagate. Porkbun says authoritative nameserver changes can take up to 48 hours.
@@ -33,9 +33,9 @@ Nameserver changes can take time to propagate. Porkbun says authoritative namese
 
 Use Zoho Mail and create:
 
-- `sales@yourdomain.com`
-- `info@yourdomain.com`
-- `purchasing@yourdomain.com`
+- `lee@cyclevance.com`
+- `info@cyclevance.com`
+- `purchasing@cyclevance.com`
 
 In Zoho Mail, add the domain and follow the domain verification steps. Then add Zoho's MX, SPF, and DKIM records in Cloudflare DNS.
 
@@ -49,7 +49,6 @@ Cloudflare Email Routing can forward incoming email addresses, but it is not a f
 
 ## Site updates needed before launch
 
-- Replace `sales@yourdomain.com` in `index.html` with the real company mailbox.
-- Replace `yourdomain.com` in this document with the actual domain.
+- Confirm `lee@cyclevance.com` is the preferred public mailbox.
 - Add company address, phone number, and legal name if available.
 - Add resin certifications or quality documents if the company has them.
