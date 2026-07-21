@@ -35,7 +35,7 @@ if (inquiryForm) {
     const mailtoUrl = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
     if (note) {
-      note.textContent = "Opening your email app. If nothing opens, email lee@cyclevance.com directly.";
+      note.textContent = "Opening your email app. If nothing opens, email info@CycleVance.com directly.";
     }
 
     window.location.href = mailtoUrl;

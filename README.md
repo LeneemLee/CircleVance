@@ -1,6 +1,6 @@
-# CircleVance
+# CycleVance
 
-CircleVanceWeb is a static company website for a US-focused plastic recycling and resin supply business.
+CycleVanceWeb is a static company website for a US-focused plastic recycling and resin supply business.
 
 ## Files
 
