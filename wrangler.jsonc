@@ -1,0 +1,6 @@
+{
+  "name": "circlevance",
+  "pages_build_output_dir": ".",
+  "compatibility_date": "2026-06-15",
+  "services": [{"binding":"INQUIRIES","service":"cyclevance-inquiries"}]
+}

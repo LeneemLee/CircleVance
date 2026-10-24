@@ -7,6 +7,10 @@ const domains = new Set([
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
+    if (url.pathname === '/api/inquiries' || url.pathname === '/api/inquiries/config') {
+      if (!env.INQUIRIES) return Response.json({error:'Online submission is temporarily unavailable. Please contact info@cyclevance.com.'},{status:503,headers:{'cache-control':'no-store'}});
+      return env.INQUIRIES.fetch(request);
+    }
     const domain = url.hostname.toLowerCase().replace(/^www\./, '');
     if (!domains.has(domain)) return env.ASSETS.fetch(request);
 

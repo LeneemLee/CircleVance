@@ -35,12 +35,5 @@
   if(form){
     const material=params.get('material');if(material&&[...form.elements.material.options].some(o=>o.value===material))form.elements.material.value=material;
     const application=params.get('application');if(application)form.elements.requirements.value='Application: '+application.replaceAll('-',' ')+'\n';
-    form.addEventListener('submit',e=>{e.preventDefault();if(!form.reportValidity())return;
-      const data=new FormData(form),labels={name:'Name',company:'Company',email:'Email',material:'Material',grade:'Grade / brand',volume:'Monthly volume (metric tons)',destination:'Delivery destination',condition:'Material condition',producer:'Preferred producer',process:'Processing',documents:'Documents / samples',delivery:'Target delivery date',requirements:'Application & requirements'};
-      const text='CycleVance — Product inquiry\n\n'+Object.entries(labels).map(([k,v])=>v+': '+(data.get(k)||'Not specified')).join('\n');
-      $('#draft').value=text;$('#inquiry-result').hidden=false;$('#email-draft').href='mailto:info@CycleVance.com?subject='+encodeURIComponent('Material inquiry — '+(data.get('material')||'Selection assistance'))+'&body='+encodeURIComponent(text);$('#form-status').textContent='Draft prepared. Nothing has been sent.';$('#inquiry-result').scrollIntoView({block:'nearest',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});
-    });
-    $('#copy-draft').addEventListener('click',async()=>{try{await navigator.clipboard.writeText($('#draft').value);$('#form-status').textContent='Inquiry copied. Paste it into your email to CycleVance.';}catch{$('#draft').focus();$('#draft').select();$('#form-status').textContent='Select and copy the draft above.';}});
-    $('#download-draft').addEventListener('click',()=>{const url=URL.createObjectURL(new Blob([$('#draft').value],{type:'text/plain;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download='CycleVance-material-inquiry.txt';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);$('#form-status').textContent='Inquiry downloaded. Email the file or its contents to CycleVance.';});
   }
 })();
